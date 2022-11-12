@@ -71,14 +71,26 @@ public class App {
          * desenho.filledPolygon(xVertical, yVertical);
          * // ---------------------------------------- //
          */
-        Segment hSegment1 = new Segment(200, false, desenho.RED, desenho.ORANGE, 300, 180);
-        hSegment1.drawSegmentOn(desenho);
+        Segment d = new Segment(200, false, desenho.RED, desenho.ORANGE, 300, 180);
+        d.drawSegmentOn(desenho);
 
-        Segment vSegment1 = new Segment(200, true, desenho.RED, desenho.ORANGE, 300, 200);
-        vSegment1.drawSegmentOff(desenho);
+        Segment e = new Segment(200, true, desenho.RED, desenho.ORANGE, 300, 200);
+        e.drawSegmentOff(desenho);
 
-        Segment vSegment2 = new Segment(200, true, desenho.RED, desenho.ORANGE, 500, 200);
-        vSegment2.drawSegmentOff(desenho);
+        Segment c = new Segment(200, true, desenho.RED, desenho.ORANGE, 500, 200);
+        c.drawSegmentOff(desenho);
+
+        Segment g = new Segment(200, false, desenho.RED, desenho.ORANGE, 300, 400);
+        g.drawSegmentOff(desenho);
+
+        Segment f = new Segment(200, true, desenho.RED, desenho.ORANGE, 300, 420);
+        f.drawSegmentOn(desenho);
+
+        Segment b = new Segment(200, true, desenho.RED, desenho.ORANGE, 500, 420);
+        b.drawSegmentOff(desenho);
+
+        Segment a = new Segment(200, false, desenho.RED, desenho.ORANGE, 300, 620);
+        a.drawSegmentOff(desenho);
 
         desenho.show();
 
