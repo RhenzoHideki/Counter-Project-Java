@@ -1,2 +1,4 @@
 ## Versão 1
-![First UML Vesion](uml_versions/Version1.png)
+![First UML Vesion](Version1.png)
+## Versão 2
+![Second UML Vesion](Version2.png)
