@@ -22,19 +22,14 @@ public class App {
         double fator = 50;
         double xInicial = 200;
         double yInicial = 200;
+        int[] time = { 2, 59, 59 };
+        Clock c = new Clock(fator, Draw.BLACK, Draw.WHITE, xInicial, yInicial, 1, time);
 
-        DigitPair digitsDigit = new DigitPair(fator, Draw.BLACK, Draw.RED, xInicial, yInicial);
-        digitsDigit.showOnes(2, desenho);
-        digitsDigit.showTens(5, desenho);
-
-        DigitPair a = new DigitPair(fator, Draw.BLACK, Draw.RED, xInicial + 3 * fator, yInicial);
-        a.showOnes(4, desenho);
-        a.showTens(2, desenho);
-
-        DigitPair b = new DigitPair(fator, Draw.BLACK, Draw.RED, xInicial + 6 * fator, yInicial);
-        b.showOnes(2, desenho);
-        b.showTens(1, desenho);
-
-        desenho.show();
+        while (true) {
+            desenho.clear();
+            c.runClock(desenho);
+            desenho.show();
+            Thread.sleep(1000);
+        }
     }
 }// fim da classe
