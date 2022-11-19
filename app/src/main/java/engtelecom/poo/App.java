@@ -22,8 +22,8 @@ public class App {
         double fator = 50;
         double xInicial = 200;
         double yInicial = 200;
-        int[] time = { 2, 59, 59 };
-        Clock c = new Clock(fator, Draw.BLACK, Draw.WHITE, xInicial, yInicial, 1, time);
+        int[] time = { 0, 0, 15 };
+        Clock c = new Clock(fator, Draw.BLACK, Draw.WHITE, xInicial, yInicial, -1, time);
 
         while (true) {
             desenho.clear();

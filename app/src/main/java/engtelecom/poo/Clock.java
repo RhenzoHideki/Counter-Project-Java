@@ -17,6 +17,7 @@ public class Clock {
 
     public Clock(double factor, Color colorOn, Color colorOff, double coordX, double coordY, int isProgressive,
             int[] time) {
+        factor = checkFactor(factor);
         clockPairs[0] = new DigitPair(factor, colorOn, colorOff, coordX, coordY); // Hours
         clockPairs[1] = new DigitPair(factor, colorOn, colorOff, coordX + 3.5 * factor, coordY);
         clockPairs[2] = new DigitPair(factor, colorOn, colorOff, coordX + 7 * factor, coordY);
@@ -24,7 +25,14 @@ public class Clock {
 
     }
 
-    void runClock(Draw d) {
+    private double checkFactor(double factor) {
+        if (factor < 20 || factor > 100) {
+            return 40;
+        }
+        return factor;
+    }
+
+    public void runClock(Draw d) {
         c.runCounter();
         DrawClock(c.getClockValue(), d);
     }

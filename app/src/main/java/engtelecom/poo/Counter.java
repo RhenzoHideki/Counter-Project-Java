@@ -14,10 +14,20 @@ public class Counter {
      * clockValue[2] - seconds
      */
     private int[] clockValue = new int[3];
+    private int[] clockTarget = new int[3];
 
     public Counter(int isProgressive, int[] clockValue) {
         this.isProgressive = setIsProgressive(isProgressive);
         this.clockValue = clockValue;
+    }
+
+    public void setClock(int[] clockValue) {
+        if (isProgressive == 1) {
+            clockTarget = clockValue.clone();
+            this.clockValue = new int[] { 0, 0, 0 };
+        } else {
+            clockTarget = new int[] { 0, 0, 0 };
+        }
     }
 
     private int setIsProgressive(int isProgressive) {
@@ -40,6 +50,8 @@ public class Counter {
     }
 
     public void runCounter() {
+        if (this.clockTarget.equals(this.clockValue))
+            return;
         seconds();
     }
 
