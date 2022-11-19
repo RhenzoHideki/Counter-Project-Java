@@ -9,8 +9,16 @@ public class Clock {
      * clockPairs[0] - hour
      * clockPairs[1] - minutes
      * clockPairs[2] - seconds
+     * used for drawing
      */
     private DigitPair[] clockPairs = new DigitPair[3];
+    /**
+     * clockValue are used as
+     * clockValue[0] - hour
+     * clockValue[1] - minutes
+     * clockValue[2] - seconds
+     * used for calculus
+     */
     private int[] clockValue = new int[3];
 
     private Counter c;
@@ -25,6 +33,12 @@ public class Clock {
 
     }
 
+    /**
+     * Method that checks the factor
+     * 
+     * @param factor - factor passed by user
+     * @return - factor inside the desired values
+     */
     private double checkFactor(double factor) {
         if (factor < 20 || factor > 100) {
             return 40;
@@ -32,6 +46,11 @@ public class Clock {
         return factor;
     }
 
+    /**
+     * Method that runs the unit timer and Draws in canvas
+     * 
+     * @param d Canvas that will be drawn
+     */
     public void runClock(Draw d) {
         c.runCounter();
         DrawClock(c.getClockValue(), d);
@@ -40,8 +59,8 @@ public class Clock {
     /**
      * Method that Draws the 3 pairs of Numbers
      * 
-     * @param time - time used
-     * @param d
+     * @param time - value time used to draw
+     * @param d    - Canvas
      */
     public void DrawClock(int[] time, Draw d) {
         clockPairs[0].showTens(time[0] / 10, d);
