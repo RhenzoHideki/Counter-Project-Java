@@ -46,13 +46,13 @@ Marque com x cada um dos itens que atendeu ao desenvolver este projeto.
   - Você deve obrigatoriamente fazer uso de associações entre classes
 - [x] Projeto Java com gradle, indicando e provendo as dependências de bibliotecas externas. 
 - [x] Criar um arquivo `.gitignore` adequado ao projeto
-- [ ] Comportamento correto do cronômetro e do contador regressivo
+- [x] Comportamento correto do cronômetro e do contador regressivo
 - [x] Representação gráfica correta do *display*
-- [ ] Teste de unidade para garantir o funcionamento esperado para cada classe (com exceção da classe com o método `main`)
-  - [ ] Comentário acima de cada teste de unidade explicando o que está sendo testado
+- [x] Teste de unidade para garantir o funcionamento esperado para cada classe (com exceção da classe com o método `main`)
+  - [x] Comentário acima de cada teste de unidade explicando o que está sendo testado
 - [x] Respeitar o encapsulamento de dados, responsabilidade única e divisão de responsabilidades
-- [ ] Fazer uso correto de constantes e não ter constantes literais espalhados pelo código
-- [ ] Na classe com método `main` deve-se instanciar ao menos 1 cronômetro e 1 contador regressivo, cada um com tamanhos e cores diferentes
+- [x] Fazer uso correto de constantes e não ter constantes literais espalhados pelo código
+- [x] Na classe com método `main` deve-se instanciar ao menos 1 cronômetro e 1 contador regressivo, cada um com tamanhos e cores diferentes
 - [x] Comportamento correto da classe que possui método `main` com atualização da tela a cada 1 segundo para demonstrar a contagem
 - [x] Documentação dos principais métodos com JavaDOC
 - [x] É possível executar o projeto com sucesso após o mesmo ser clonado via `git clone`
