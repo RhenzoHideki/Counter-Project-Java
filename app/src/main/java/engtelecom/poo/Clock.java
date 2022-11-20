@@ -20,6 +20,8 @@ public class Clock {
      * used for calculus
      */
     private int[] clockValue = new int[3];
+    private final int[] FACTOR_LIMITS = { 20, 100 };
+    private final int FACTOR_DEFAULT = 40;
 
     private Counter c;
 
@@ -42,8 +44,8 @@ public class Clock {
      * @return - factor inside the desired values
      */
     private double checkFactor(double factor) {
-        if (factor < 20 || factor > 100) {
-            return 40;
+        if (factor < FACTOR_LIMITS[0] || factor > FACTOR_LIMITS[1]) {
+            return FACTOR_DEFAULT;
         }
         return factor;
     }

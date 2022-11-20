@@ -9,6 +9,7 @@ public class Counter {
     private int isProgressive;
     private final int[] MAX_CLOCK = { 99, 59, 59 };
     private final int[] MIN_CLOCK = { 00, 00, 00 };
+    private final int[] ISPROGRESSIVE_VALUES = { -1, 1 };
     /*
      * clockValue used to keep track of current time
      * clockValue[0] - hour
@@ -49,10 +50,11 @@ public class Counter {
      * @param clockValue - time that wants to work with
      */
     private void setClock(int[] clockValue) {
-        if (isProgressive == 1) {
+        if (isProgressive == ISPROGRESSIVE_VALUES[1]) {
             clockTarget = clockValue.clone();
             this.clockValue = new int[] { 0, 0, 0 };
-        } else {
+        }
+        if (isProgressive == ISPROGRESSIVE_VALUES[0]) {
             this.clockValue = clockValue;
             clockTarget = new int[] { 0, 0, 0 };
         }
@@ -65,7 +67,7 @@ public class Counter {
      * @return - returns result
      */
     private int setIsProgressive(int isProgressive) {
-        if (isProgressive != -1 && isProgressive != 1) {
+        if (isProgressive != ISPROGRESSIVE_VALUES[0] && isProgressive != ISPROGRESSIVE_VALUES[1]) {
             return 1;
         }
         return isProgressive;
@@ -88,19 +90,19 @@ public class Counter {
      * Method that will work in the hours progress
      */
     private void hours() {
-        if (this.clockValue[0] >= 0 && this.clockValue[0] <= 99) {
-            if (isProgressive == 1) {
-                this.clockValue[1] = 0;
+        if (this.clockValue[0] >= MIN_CLOCK[0] && this.clockValue[0] <= MAX_CLOCK[0]) {
+            if (isProgressive == ISPROGRESSIVE_VALUES[1]) {
+                this.clockValue[1] = MIN_CLOCK[1];
             } else {
-                this.clockValue[1] = 59;
+                this.clockValue[1] = MAX_CLOCK[1];
             }
             this.clockValue[0] = this.clockValue[0] + isProgressive;
         }
         if (this.clockValue[0] == -1 || this.clockValue[0] == 100) {
             if (isProgressive == 1) {
-                this.clockValue[0] = 0;
+                this.clockValue[0] = MIN_CLOCK[0];
             } else {
-                this.clockValue[0] = 99;
+                this.clockValue[0] = MAX_CLOCK[0];
             }
         }
     }
@@ -109,11 +111,11 @@ public class Counter {
      * Method that will work in the minutes progress
      */
     private void minutes() {
-        if (this.clockValue[1] >= 0 && this.clockValue[1] <= 59) {
-            if (isProgressive == 1) {
-                this.clockValue[2] = 0;
+        if (this.clockValue[1] >= MIN_CLOCK[1] && this.clockValue[1] <= MAX_CLOCK[1]) {
+            if (isProgressive == ISPROGRESSIVE_VALUES[1]) {
+                this.clockValue[2] = MIN_CLOCK[2];
             } else {
-                this.clockValue[2] = 59;
+                this.clockValue[2] = MAX_CLOCK[2];
             }
             this.clockValue[1] = this.clockValue[1] + isProgressive;
         }
@@ -126,7 +128,7 @@ public class Counter {
      * Method that will work in the second progress
      */
     private void seconds() {
-        if (this.clockValue[2] >= 0 || this.clockValue[2] <= 59) {
+        if (this.clockValue[2] >= MIN_CLOCK[2] || this.clockValue[2] <= MAX_CLOCK[2]) {
             this.clockValue[2] = this.clockValue[2] + isProgressive;
         }
         if (this.clockValue[2] == -1 || this.clockValue[2] == 60) {
