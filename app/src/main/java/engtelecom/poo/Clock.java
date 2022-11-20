@@ -26,9 +26,11 @@ public class Clock {
     public Clock(double factor, Color colorOn, Color colorOff, double coordX, double coordY, int isProgressive,
             int[] time) {
         factor = checkFactor(factor);
+        // Doing the number of the clock
         clockPairs[0] = new DigitPair(factor, colorOn, colorOff, coordX, coordY); // Hours
-        clockPairs[1] = new DigitPair(factor, colorOn, colorOff, coordX + 3.5 * factor, coordY);
-        clockPairs[2] = new DigitPair(factor, colorOn, colorOff, coordX + 7 * factor, coordY);
+        clockPairs[1] = new DigitPair(factor, colorOn, colorOff, coordX + 3.5 * factor, coordY); // Minutes
+        clockPairs[2] = new DigitPair(factor, colorOn, colorOff, coordX + 7 * factor, coordY); // Seconds
+
         c = new Counter(isProgressive, time);
 
     }

@@ -19,15 +19,21 @@ public class App {
         desenho.enableDoubleBuffering();
 
         // determina a proporção que será usada para desenhar todos os elementos
-        double fator = 50;
-        double xInicial = 200;
-        double yInicial = 200;
+        double fator = 20;
+        double xInicial = 100;
+        double yInicial = 100;
         int[] time = { 0, 0, 15 };
         Clock c = new Clock(fator, Draw.BLACK, Draw.WHITE, xInicial, yInicial, -1, time);
 
+        fator = 50;
+        xInicial = 50;
+        yInicial = 250;
+        int[] time1 = { 0, 0, 15 };
+        Clock c1 = new Clock(fator, Draw.BLUE, Draw.WHITE, xInicial, yInicial, 1, time1);
         while (true) {
             desenho.clear();
             c.runClock(desenho);
+            c1.runClock(desenho);
             desenho.show();
             Thread.sleep(1000);
         }

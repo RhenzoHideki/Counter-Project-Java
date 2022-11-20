@@ -53,6 +53,7 @@ public class Counter {
             clockTarget = clockValue.clone();
             this.clockValue = new int[] { 0, 0, 0 };
         } else {
+            this.clockValue = clockValue;
             clockTarget = new int[] { 0, 0, 0 };
         }
     }
